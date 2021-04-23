@@ -9,9 +9,37 @@ const onAddSong = function (event) {
   api.addSong(formData)
     .then(ui.onAddSongSuccess)
     .catch(ui.onAddSongFailure)
-  console.log('this worked')
+}
+
+const onSongIndex = function () {
+  api.songIndex()
+    .then(ui.onSongIndex)
+    .catch(console.error)
+}
+
+const onUpdateSong = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  const id = formData.music.id
+  console.log('this is form data on update', formData)
+  api.updateSong(id, formData)
+    .then(ui.onUpdateSongSuccess)
+    .catch(ui.onError)
+}
+
+
+const onDeleteSong = function (event) {
+  event.preventDefault()
+  const id = $(event.target).data('id')
+  api.deleteSong(id)
+    .then(ui.onDeleteSongSuccess)
+    .catch(ui.onError)
 }
 
 module.exports = {
-  onAddSong
+  onAddSong,
+  onSongIndex,
+  onUpdateSong,
+  onDeleteSong
 }

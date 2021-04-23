@@ -9,20 +9,44 @@ const addSong = function (formData) {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
-    // data: {
-    //   music: {
-    //     title: {
-    //       artist: {
-    //         fav_song: {
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
+  })
+}
+
+const songIndex = function () {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/music',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+const updateSong = function (id, formData) {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/music/' + id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: formData
 
   })
 }
 
+const deleteSong = function (id) {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/music/' + id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  addSong
+  addSong,
+  songIndex,
+  updateSong,
+  deleteSong
 }

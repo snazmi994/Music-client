@@ -30,14 +30,10 @@ const onSignOut = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  // get the data from the form
   const form = event.target
   const data = getFormFields(form)
-  // pass the data to an api function
   api.changePassword(data)
-    // handle success
     .then(ui.onChangePasswordSuccess)
-    // handle failure
     .catch(ui.onChangePasswordFailure)
 }
 
@@ -46,5 +42,4 @@ module.exports = {
   onSignIn,
   onSignOut,
   onChangePassword
-  // checkForWinner
 }
