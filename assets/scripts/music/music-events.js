@@ -31,9 +31,10 @@ const onUpdateSong = function (event) {
 
 const onDeleteSong = function (event) {
   event.preventDefault()
-  const id = $(event.target).data('id')
-  api.deleteSong(id)
-    .then(ui.onDeleteSongSuccess)
+  const form = event.target
+  const formData = getFormFields(form)
+  api.deleteSong(formData.music.id)
+    .then(ui.onDeleteSong)
     .catch(ui.onError)
 }
 

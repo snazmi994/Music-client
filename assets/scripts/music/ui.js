@@ -22,7 +22,7 @@ const onSongIndex = function (responseData) {
      <h4>Title: ${music.title}</h4>
      <p>Artist: ${music.artist}</p>
      <p>Song: ${music.fav_song}</p>
-     <button class='music-destroy' data-id=${music._id}>
+     <button class='music-destroy' data-id=${music.title}>
         Delete Button
       </button>
         `
@@ -41,20 +41,27 @@ const onUpdateSongSuccess = function () {
   $('form').trigger('reset')
 }
 
-const onDeleteSongSuccess = function () {
-  $('#message').text('Song has been successfully deleted!')
-  $('#message').addClass('success')
+const onDeleteSong = function () {
+  $('#music-destroy-message').text('Book successfully deleted!')
+  // adding a class of `success` to the element with the id `books-destroy-message`
+  $('#music-destroy-message').addClass('success')
+  // use setTimeout to clear out destroyed a book success message.
+  // run this callback after 5000 millisconds (5 seconds)
   setTimeout(() => {
-    $('#message').text('')
-    $('#message').removeClass('success')
+    // Clear the destroy books message
+    $('#music-destroy-message').text('')
+    // Remove the class of `success` from the element with the id `books-destroy-message`
+    $('#music-destroy-message').removeClass('success')
   }, 5000)
-  $('#music-display').text('The songs have changed! Click "See Library" to refresh.')
+  $('#music-display').text('The books have changed! Click "Get Books" to refresh.')
+  // select every form on the page and cause it to reset (clear the fields)
   $('form').trigger('reset')
 }
+
 module.exports = {
   onAddSongSuccess,
   onSongIndex,
   onUpdateSongSuccess,
-  onDeleteSongSuccess
+  onDeleteSong
 
 }

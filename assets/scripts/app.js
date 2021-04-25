@@ -17,5 +17,5 @@ $(() => {
   $('#music-create').on('submit', musicEvents.onAddSong)
   $('#music-index').on('click', musicEvents.onSongIndex)
   $('#music-update').on('submit', musicEvents.onUpdateSong)
-  $('#music-destroy').on('click', musicEvents.onDeleteSong)
+  $('#music-destroy').on('submit', musicEvents.onDeleteSong)
 })
