@@ -16,7 +16,7 @@ const onSignInSuccess = function (response) {
 }
 
 const onSignInFailure = function () {
-  $('log-message').text('Sign in failed')
+  $('#log-message').text('Sign in failed')
 }
 
 const onSignOutSuccess = function () {
