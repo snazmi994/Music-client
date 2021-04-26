@@ -2,44 +2,36 @@
 const store = require('../store')
 
 const onSignUpSuccess = function () {
-  $('#message').text('Signed Up Successfully')
+  $('#log-message').text('Signed Up Successfully')
   $('#sign-up').trigger('reset')
-  $('#sign-up').hide()
-  $('#sign-in').show()
 }
 
 const onSignUpFailure = function () {
-  $('#message').text('Sign up failed')
+  $('#log-message').text('Sign up failed')
 }
 
 const onSignInSuccess = function (response) {
   store.user = response.user
-  $('#message').text(response.user.email + ' signed in successfully')
-  $('#sign-up').hide()
-  $('#sign-in').hide()
-  $('#create-game').show()
-  $('#sign-out').show()
+  $('#log-message').text(response.user.email + ' signed in successfully')
 }
 
 const onSignInFailure = function () {
-  $('#message').text('Sign in failed')
+  $('log-message').text('Sign in failed')
 }
 
 const onSignOutSuccess = function () {
-  $('#message').text('I Get It.')
-  $('#create-game').hide()
-  $('#sign-in').show()
+  $('#log-message').text('See you later')
   $('#sign-in').trigger('reset')
-  $('#sign-up').show()
+
   store.user = null
 }
 
 const onChangePasswordSuccess = function () {
-  $('#message').text('Change password successfully')
+  $('#log-message').text('Change password successfully')
   $('#change-password').trigger('reset')
 }
 const onChangePasswordFailure = function () {
-  $('#message').text('Change password failed')
+  $('#log-message').text('Change password failed')
 }
 
 

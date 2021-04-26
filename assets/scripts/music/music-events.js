@@ -2,6 +2,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./music-api')
 const ui = require('./ui')
 
+// create
 const onAddSong = function (event) {
   event.preventDefault()
   const form = event.target
@@ -11,12 +12,14 @@ const onAddSong = function (event) {
     .catch(ui.onAddSongFailure)
 }
 
+// index
 const onSongIndex = function () {
   api.songIndex()
     .then(ui.onSongIndex)
     .catch(console.error)
 }
 
+// update
 const onUpdateSong = function (event) {
   event.preventDefault()
   const form = event.target
@@ -28,7 +31,7 @@ const onUpdateSong = function (event) {
     .catch(ui.onError)
 }
 
-
+// delete
 const onDeleteSong = function (event) {
   event.preventDefault()
   const form = event.target

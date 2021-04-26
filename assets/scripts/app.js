@@ -18,4 +18,6 @@ $(() => {
   $('#music-index').on('click', musicEvents.onSongIndex)
   $('#music-update').on('submit', musicEvents.onUpdateSong)
   $('#music-destroy').on('submit', musicEvents.onDeleteSong)
+
+
 })

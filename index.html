@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Music Simulation</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,79 +12,124 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1></h1>
 
-      <div class='log'>
-      <div id='message'></div>
+      <div class='log in'>
 
-     <form id="sign-up">
-       <input type="email" name="credentials[email]" placeholder="email">
-       <input type="password" name="credentials[password]" placeholder="password">
-       <input type="password" name="credentials[password_confirmation]" placeholder="password confirmation">
-       <input type="submit" value="Sign Up"/>
-     </form>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModalLong">
+Log In/Out     </button>
 
-     <form id="sign-in">
-               <input name="credentials[email]" type="text" placeholder="email">
-               <input name="credentials[password]" type="password" placeholder=" password">
-               <input type="submit" value="Sign In"/>
-             </form>
-       <form id="change-password">
-             <input type="password" name="passwords[old]" placeholder="old password">
-             <input type="password" name="passwords[new]" placeholder="new password">
-             <input type="submit" value="change password"/>
-           </form>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div id='log-message'></div>
 
-    <form>
-<button id="sign-out"> Sign Out </button>
+              <form id="sign-up">
+                <input type="email" name="credentials[email]" placeholder="email">
+                <input type="password" name="credentials[password]" placeholder="password">
+                <input type="password" name="credentials[password_confirmation]" placeholder="password confirmation">
+                <input type="submit" value="Sign Up"/>
+              </form>
+
+              <form id="sign-in">
+                        <input name="credentials[email]" type="text" placeholder="email">
+                        <input name="credentials[password]" type="password" placeholder=" password">
+                        <input type="submit" value="Sign In"/>
+                      </form>
+                <form id="change-password">
+                      <input type="password" name="passwords[old]" placeholder="old password">
+                      <input type="password" name="passwords[new]" placeholder="new password">
+                      <input type="submit" value="change password"/>
+                    </form>
+
+             <form>
+           <button id="sign-out"> Sign Out </button>
+             </form>            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+
+
+<p>
+
+  <button class="btn btn-outline-warning" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Changes to my Playlist
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+      <div id="music-message"></div>
+    <h2>Get this off my playlist</h2>
+    <form id="music-destroy">
+      <input name="music[id]" type="text" placeholder="Enter id here">
+      <button>Delete</button>
     </form>
-    <h1>Music Database</h1>
+<br>
+
+    <h2>Make Changes To My Favorite Album</h2>
+    <form id="music-update">
+      <input name="music[id]" type="text" placeholder="Enter id here">
+      <input name="music[title]" type="text" placeholder="Enter song title">
+      <input name="music[artist]" type="text" placeholder="Enter artist name">
+      <input name="music[fav_song]" type="text" placeholder="Enter favorite lyric">
+
+      <button>Update Song</button>
+  </form>
+
+    <br>
+    <h2>Add a New Song</h2>
+    <form id="music-create">
+      <input name="music[title]" type="text" placeholder="Enter song title">
+      <input name="music[artist]" type="text" placeholder="Enter album artist">
+      <input name="music[fav_song]" type="text" placeholder="Enter song lyric">
+      <button>Add New Song</button>
+    </form>
+
+    <br>
+  </div>
+</div>
+
+<div class id="ipod"></div>
+
+
+
+
+<header>
+
+<button type="button" class="btn btn-outline-primary" id='music-index'>   Start Playlist  </button>
+  <div id='message'></div>
+  <div id='message'></div>
+  <div id="error-message"></div>
+
+</header>
         <main>
           <section>
-            <h2>See My Library</h2>
-            <button id='music-index'>Music Library</button>
-            <hr>
+<br>
+<br>
 
 
-            <hr>
-            <h2>Delete this song</h2>
-            <form id="music-destroy">
-              <input name="music[id]" type="text" placeholder="Enter id here">
-              <button>Delete</button>
-            </form>
-            <div id="music-destroy-message"></div>
-            <hr>
+            <div class="container">
+ <div class="overflow-auto"><div id="music-display"></div></div>
+  </div>
 
-            <h2>Update this song</h2>
-            <form id="music-update">
-              <input name="music[id]" type="text" placeholder="Enter id here">
-              <input name="music[title]" type="text" placeholder="Enter album title">
-              <input name="music[artist]" type="text" placeholder="Enter album artist">
-              <input name="music[fav_song]" type="text" placeholder="Enter song title">
 
-              <button>Update Song</button>
-            <div id="music-update-message"></div>
-          </form>
-
-            <hr>
-            <h2>Add to the list</h2>
-            <form id="music-create">
-              <input name="music[title]" type="text" placeholder="Enter album title">
-              <input name="music[artist]" type="text" placeholder="Enter album artist">
-              <input name="music[fav_song]" type="text" placeholder="Enter song title">
-              <button>Add New Song</button>
-            </form>
-            <div id="music-create-message"></div>
-            <hr>
-          </section>
-  <section>
-          <!-- We will show any error messages in this div -->
-          <div id="error-message"></div>
-          <!-- We will show our books in books-display after loading the books -->
-          <div id="music-display"></div>
         </section>
       </main>
 
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YDlZ14E5XX8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
     </body>
 </html>

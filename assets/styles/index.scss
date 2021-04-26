@@ -1,1 +1,49 @@
 @import '~bootstrap/scss/bootstrap';
+
+
+body
+  {
+  background: url(https://i.pinimg.com/originals/4a/8c/66/4a8c661b4788a2e22a7cb3cc49c67126.gif);
+  background-repeat: no-repeat;
+      background-size: 2200px 2000px;
+}
+.container {
+  // transform:rotate(20deg);
+margin: 0px 400px 800px 650px;
+  width: 500px;
+height: 400px;
+background-image: url(https://i.pinimg.com/736x/27/9c/77/279c7780a62056f983db7b5cfcafe4d4.jpg);
+text-align: center;
+font-family: ChicagoFont;
+color: #953553;
+border: 6px solid #white;
+border-radius: 10px;
+justify-content: center;
+overflow: visible ;
+overflow-x: scroll;
+overflow-y: auto;
+
+}
+
+h4 {
+  font-size: 80px;
+}
+
+h2 {
+  font-size: 40px;
+}
+h6{
+  font-size: 30px;
+}
+
+header {
+  text-align: center;
+}
+
+
+// transform:rotate(20deg);
+// margin: 70px 200px 400px 600px;
+// font-size: 20px;
+// font-style: bold;
+//  font-family: 'ChicagoFont';
+//  overflow: scroll;
