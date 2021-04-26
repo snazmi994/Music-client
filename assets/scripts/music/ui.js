@@ -40,18 +40,18 @@ const onUpdateSongSuccess = function () {
     $('#music-message').text('')
     $('#music-message').removeClass('success')
   }, 5000)
-  $('#music-display').text('The song has changed! Click See Library.')
+  $('#music-display').text('The song has changed!')
   $('form').trigger('reset')
 }
 
 const onDeleteSong = function () {
-  $('#music-message').text('Book successfully deleted!')
+  $('#music-message').text('song successfully deleted!')
   $('#music-message').addClass('success')
   setTimeout(() => {
     $('#music-message').text('')
     $('#music-message').removeClass('success')
   }, 5000)
-  $('#music-display').text('The books have changed! Click "Get Books" to refresh.')
+  $('#music-display').text('The songs have changed!')
   $('form').trigger('reset')
 }
 
