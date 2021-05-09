@@ -13,7 +13,6 @@ $(() => {
   $('#sign-out').hide()
   $('#sign-up').show()
   $('#change-password').hide()
-  $('#music-index').hide()
 
 
   $('#sign-up').on('submit', events.onSignUp)

@@ -11,7 +11,7 @@ const onAddSongSuccess = function (response) {
   }, 5000)
   $('#music-display').text('Added Your New Jams!')
   $('form').trigger('reset')
-  $('#music-index').show()
+
 }
 
 const onAddSongFailure = function () {
