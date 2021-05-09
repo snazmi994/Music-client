@@ -9,6 +9,11 @@ const musicEvents = require('./music/music-events')
 // require('./example')
 
 $(() => {
+  $('#sign-in').show()
+  $('#sign-out').hide()
+  $('#sign-up').show()
+  $('#change-password').hide()
+
   $('#sign-up').on('submit', events.onSignUp)
   $('#sign-in').on('submit', events.onSignIn)
   $('#sign-out').on('click', events.onSignOut)
@@ -18,6 +23,4 @@ $(() => {
   $('#music-index').on('click', musicEvents.onSongIndex)
   $('#music-update').on('submit', musicEvents.onUpdateSong)
   $('#music-destroy').on('submit', musicEvents.onDeleteSong)
-
-
 })
