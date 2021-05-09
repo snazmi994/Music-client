@@ -11,6 +11,7 @@ const onAddSongSuccess = function (response) {
   }, 5000)
   $('#music-display').text('Added Your New Jams!')
   $('form').trigger('reset')
+  $('#music-index').show()
 }
 
 const onAddSongFailure = function () {
@@ -19,7 +20,7 @@ const onAddSongFailure = function () {
 
 const onSongIndex = function (responseData) {
   const music = responseData
-  console.log(responseData)
+  // console.log(responseData)
   let musicHtml = ''
   music.forEach(music => {
     musicHtml += `
