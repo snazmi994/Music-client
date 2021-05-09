@@ -3,18 +3,18 @@ const store = require('../store')
 
 const onAddSongSuccess = function (response) {
   store.music = response.music
-  $('#music-message').text('song added successfully!')
-  $('#music-message').addClass('success')
+  $('#music-display').text('song added successfully!')
+  $('#music-display').addClass('success')
   setTimeout(() => {
-    $('#music-message').text('')
-    $('#music-message').removeClass('success')
+    $('#music-display').text('')
+    $('#music-display').removeClass('success')
   }, 5000)
   $('#music-display').text('Added Your New Jams!')
   $('form').trigger('reset')
 }
 
 const onAddSongFailure = function () {
-  $('#music-essage').text('Song Could Not Be Added')
+  $('#music-display').text('Song Could Not Be Added')
 }
 
 const onSongIndex = function (responseData) {
@@ -38,31 +38,31 @@ const onSongIndex = function (responseData) {
 }
 
 const onUpdateSongSuccess = function () {
-  $('#music-message').text('Song successfully updated!')
-  $('#music-message').addClass('success')
+  $('#music-display').text('Song successfully updated!')
+  $('#music-display').addClass('success')
   setTimeout(() => {
-    $('#music-message').text('')
-    $('#music-message').removeClass('success')
+    $('#music-display').text('')
+    $('#music-display').removeClass('success')
   }, 5000)
   $('#music-display').text('The song has changed!')
   $('form').trigger('reset')
 }
 const onUpdateSongFailure = function () {
-  $('#music-message').text('Change Song Failed')
+  $('#music-display').text('Change Song Failed')
 }
 
 const onDeleteSong = function () {
-  $('#music-message').text('song successfully deleted!')
-  $('#music-message').addClass('success')
+  $('#music-display').text('song successfully deleted!')
+  $('#music-display').addClass('success')
   setTimeout(() => {
-    $('#music-message').text('')
-    $('#music-message').removeClass('success')
+    $('#music-display').text('')
+    $('#music-display').removeClass('success')
   }, 5000)
   $('#music-display').text('The songs have changed!')
   $('form').trigger('reset')
 }
 const onDeleteSongFailure = function () {
-  $('#music-message').text('Delete Failed')
+  $('#music-display').text('Delete Failed')
 }
 
 module.exports = {
