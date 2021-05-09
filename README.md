@@ -1,4 +1,7 @@
 Shanjana's Music Database
+
+See Music Database - https://snazmi994.github.io/Music-client/
+
 User Story: My front end will be a single page application and will have a sign-up and sign-in section. Upon verifying their account they will be prompted with the page to add their new song/album as well as scroll down to their directory to see the songs they stored in the database. They are also able to make edits to their existing directory and or remove as needed. A start menu button will be on the page so the use can go back to the main page to sign out or change password!
 
 User Stories
