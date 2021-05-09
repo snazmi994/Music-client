@@ -37,6 +37,9 @@ const onSongIndex = function (responseData) {
   $('#music-display').html(musicHtml)
 }
 
+const onSongIndexFailure = function () {
+  $('#music-display').text('No songs yet, Add them!')
+}
 const onUpdateSongSuccess = function () {
   $('#music-display').text('Song successfully updated!')
   $('#music-display').addClass('success')
@@ -72,6 +75,7 @@ module.exports = {
   onDeleteSong,
   onDeleteSongFailure,
   onUpdateSongFailure,
-  onAddSongFailure
+  onAddSongFailure,
+  onSongIndexFailure
 
 }

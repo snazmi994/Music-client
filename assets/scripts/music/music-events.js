@@ -16,7 +16,7 @@ const onAddSong = function (event) {
 const onSongIndex = function () {
   api.songIndex()
     .then(ui.onSongIndex)
-    .catch(console.error)
+    .catch(ui.onSongIndexFailure)
 }
 
 // update
