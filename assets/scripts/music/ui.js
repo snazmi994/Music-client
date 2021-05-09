@@ -13,6 +13,10 @@ const onAddSongSuccess = function (response) {
   $('form').trigger('reset')
 }
 
+const onAddSongFailure = function () {
+  $('#music-essage').text('Song Could Not Be Added')
+}
+
 const onSongIndex = function (responseData) {
   const music = responseData
   console.log(responseData)
@@ -43,6 +47,9 @@ const onUpdateSongSuccess = function () {
   $('#music-display').text('The song has changed!')
   $('form').trigger('reset')
 }
+const onUpdateSongFailure = function () {
+  $('#music-message').text('Change Song Failed')
+}
 
 const onDeleteSong = function () {
   $('#music-message').text('song successfully deleted!')
@@ -54,11 +61,17 @@ const onDeleteSong = function () {
   $('#music-display').text('The songs have changed!')
   $('form').trigger('reset')
 }
+const onDeleteSongFailure = function () {
+  $('#music-message').text('Delete Failed')
+}
 
 module.exports = {
   onAddSongSuccess,
   onSongIndex,
   onUpdateSongSuccess,
-  onDeleteSong
+  onDeleteSong,
+  onDeleteSongFailure,
+  onUpdateSongFailure,
+  onAddSongFailure
 
 }

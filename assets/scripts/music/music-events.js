@@ -28,7 +28,7 @@ const onUpdateSong = function (event) {
   console.log('this is form data on update', formData)
   api.updateSong(id, formData)
     .then(ui.onUpdateSongSuccess)
-    .catch(ui.onError)
+    .catch(ui.onUpdateSongFailure)
 }
 
 // delete
@@ -38,7 +38,7 @@ const onDeleteSong = function (event) {
   const formData = getFormFields(form)
   api.deleteSong(formData.music.id)
     .then(ui.onDeleteSong)
-    .catch(ui.onError)
+    .catch(ui.onDeleteSongFailure)
 }
 
 module.exports = {
