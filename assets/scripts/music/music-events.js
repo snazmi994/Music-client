@@ -7,6 +7,7 @@ const onAddSong = function (event) {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
+  console.log(formData)
   api.addSong(formData)
     .then(ui.onAddSongSuccess)
     .catch(ui.onAddSongFailure)
@@ -41,9 +42,34 @@ const onDeleteSong = function (event) {
     .catch(ui.onDeleteSongFailure)
 }
 
+const onCreateComment = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  const id = formData.musicId
+  console.log(id)
+  console.log(formData)
+  api.createComment(formData, id)
+    .then(ui.onSongIndex)
+    .catch(ui.onCreateCommentError)
+}
+
+const onDeleteComment = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  const commentId = formData.commentId
+  // const musicId = formData.musicId
+  api.deleteComment(commentId, formData)
+    .then(ui.onDeleteComment)
+    .catch(ui.onDeleteCommentFailure)
+}
+
 module.exports = {
   onAddSong,
   onSongIndex,
   onUpdateSong,
-  onDeleteSong
+  onDeleteSong,
+  onCreateComment,
+  onDeleteComment
 }

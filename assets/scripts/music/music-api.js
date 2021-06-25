@@ -22,10 +22,10 @@ const songIndex = function () {
   })
 }
 
-const updateSong = function (id, formData) {
+const updateSong = function (formData) {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/music/' + id,
+    url: config.apiUrl + '/music/',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
@@ -44,9 +44,35 @@ const deleteSong = function (id) {
   })
 }
 
+const createComment = function (formData) {
+  console.log(store.user)
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/comments/',
+    data: formData,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    formData: formData
+  })
+}
+
+const deleteComment = function (commentId, formData) {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/comments/' + commentId,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: formData
+  })
+}
+
 module.exports = {
   addSong,
   songIndex,
   updateSong,
-  deleteSong
+  deleteSong,
+  createComment,
+  deleteComment
 }

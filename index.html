@@ -97,8 +97,18 @@ Log In/Out     </button>
       <input name="music[fav_song]" type="text" placeholder="Enter song lyric">
       <button>Add New Song</button>
     </form>
-
     <br>
+    <form id="create-comment">
+      <input type="text" name="musicId"  placeholder="Enter Id">
+           <input name="comment[content]" type="text" class="create-comment" placeholder="Comment here...">
+           <button>POST</button>
+         </form>
+         <form id="delete-comment">
+           <input name="commentId" type="text" placeholder="Enter Comment id here">
+           <input name="musicId" type="text" placeholder="Enter Music id here">
+
+           <button>Delete</button>
+         </form>
   </div>
 </div>
 
@@ -108,19 +118,24 @@ Log In/Out     </button>
 
 <button type="button" class="btn btn-outline-warning" id='music-index'>   Start Playlist  </button>
   <div id='message'></div>
-  <div id='message'></div>
   <div id="error-message"></div>
 
-        <main>
-          <section>
+  <main>
+         <section>
 
 
-            <div class="container">
- <div class="overflow-auto"><div id="music-display"></div></div>
-  </div>
+           <div class="container">
+<div class="overflow-auto"><div id="music-display"></div></div>
+ </div>
+ <!-- <div class="comment-container">
+<div class="overflow-auto"><div id="comment-display"></div></div>
+</div> -->
+
 <iframe src="https://open.spotify.com/embed/playlist/3Ee0UKmWp7YVjXjLkSHFMO" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        </section>
-      </main>
+       </section>
+     </main>
+
+
 
     </body>
 </html>

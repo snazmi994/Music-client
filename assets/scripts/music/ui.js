@@ -11,7 +11,6 @@ const onAddSongSuccess = function (response) {
   }, 5000)
   $('#music-display').text('Added Your New Jams!')
   $('form').trigger('reset')
-
 }
 
 const onAddSongFailure = function () {
@@ -20,6 +19,8 @@ const onAddSongFailure = function () {
 
 const onSongIndex = function (responseData) {
   const music = responseData
+  const comment = responseData
+
   // console.log(responseData)
   let musicHtml = ''
   music.forEach(music => {
@@ -32,6 +33,10 @@ const onSongIndex = function (responseData) {
      <p><h2> ${music.artist}</h2></p>
      <p><h3>${music.fav_song}</h3></p>
      <p><small>${music._id}<small></p>
+
+     <p class="comment">${music.comments.map(comment => {
+                    return `COMMENT: ${comment.content} <br> COMMENT ID:${comment._id}<br><br>`
+                  }).join(' ')}</p>
 </p>
         `
   })
@@ -69,6 +74,36 @@ const onDeleteSongFailure = function () {
   $('#music-display').text('Delete Failed')
 }
 
+const onCreateCommentSuccess = function () {
+  $('#music-display').text('Comment successfully created!')
+  setTimeout(() => {
+    $('#music-diplay').text('')
+  }, 1500)
+}
+
+const onCreateCommentError = function () {
+  $('#music-display').text('Comment not posted')
+  setTimeout(() => {
+    $('#music-display').text('')
+  }, 1500)
+}
+
+const onDeleteComment = function () {
+  console.log('comment has been deleted')
+  $('#delete-comment').trigger('reset')
+  $('#music-display').text('comment removed')
+  setTimeout(() =>
+    $('#music-display').text('')
+  , 3000)
+}
+
+const onDeleteCommentFailure = function () {
+  $('#music-display').text('Comment not deleted')
+  setTimeout(() => {
+    $('#music-display').text('')
+  }, 1500)
+}
+
 module.exports = {
   onAddSongSuccess,
   onSongIndex,
@@ -77,6 +112,10 @@ module.exports = {
   onDeleteSongFailure,
   onUpdateSongFailure,
   onAddSongFailure,
-  onSongIndexFailure
+  onSongIndexFailure,
+  onCreateCommentSuccess,
+  onCreateCommentError,
+  onDeleteCommentFailure,
+  onDeleteComment
 
 }

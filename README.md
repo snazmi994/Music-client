@@ -33,4 +33,5 @@ view my albums button
 delete a album form
 update a album form
 
+
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/UFq53n7"><a href="//imgur.com/UFq53n7">project 2 wireframe</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>

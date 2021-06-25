@@ -14,7 +14,6 @@ $(() => {
   $('#sign-up').show()
   $('#change-password').hide()
 
-
   $('#sign-up').on('submit', events.onSignUp)
   $('#sign-in').on('submit', events.onSignIn)
   $('#sign-out').on('click', events.onSignOut)
@@ -24,4 +23,6 @@ $(() => {
   $('#music-index').on('click', musicEvents.onSongIndex)
   $('#music-update').on('submit', musicEvents.onUpdateSong)
   $('#music-destroy').on('submit', musicEvents.onDeleteSong)
+  $('#create-comment').on('submit', musicEvents.onCreateComment)
+  $('#delete-comment').on('submit', musicEvents.onDeleteComment)
 })
