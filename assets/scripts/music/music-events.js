@@ -51,7 +51,7 @@ const onCreateComment = function (event) {
   console.log(formData)
   api.createComment(formData, id)
     .then(ui.onSongIndex)
-    .catch(ui.onCreateCommentError)
+    .catch(ui.onCreateCommentSuccess)
 }
 
 const onDeleteComment = function (event) {
