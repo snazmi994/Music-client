@@ -33,5 +33,9 @@ view my albums button
 delete a album form
 update a album form
 
+<<<<<<< HEAD
 
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/UFq53n7"><a href="//imgur.com/UFq53n7">project 2 wireframe</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+=======
+<img src="https://i.imgur.com/REkjsZP.jpg" alt="Trulli" width="500" height="333">
+>>>>>>> 11bdb09d4cfadd168d496de2acdc09054ad74df5
