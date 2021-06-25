@@ -81,13 +81,6 @@ const onCreateCommentSuccess = function () {
   }, 1500)
 }
 
-const onCreateCommentError = function () {
-  $('#music-display').text('Comment not posted')
-  setTimeout(() => {
-    $('#music-display').text('')
-  }, 1500)
-}
-
 const onDeleteComment = function () {
   console.log('comment has been deleted')
   $('#delete-comment').trigger('reset')
@@ -96,8 +89,6 @@ const onDeleteComment = function () {
     $('#music-display').text('')
   , 3000)
 }
-
-
 
 module.exports = {
   onAddSongSuccess,
@@ -109,7 +100,6 @@ module.exports = {
   onAddSongFailure,
   onSongIndexFailure,
   onCreateCommentSuccess,
-  onCreateCommentError,
   onDeleteComment
 
 }
