@@ -97,12 +97,7 @@ const onDeleteComment = function () {
   , 3000)
 }
 
-const onDeleteCommentFailure = function () {
-  $('#music-display').text('Comment not deleted')
-  setTimeout(() => {
-    $('#music-display').text('')
-  }, 1500)
-}
+
 
 module.exports = {
   onAddSongSuccess,
@@ -115,7 +110,6 @@ module.exports = {
   onSongIndexFailure,
   onCreateCommentSuccess,
   onCreateCommentError,
-  onDeleteCommentFailure,
   onDeleteComment
 
 }
